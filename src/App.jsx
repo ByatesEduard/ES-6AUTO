@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Hero from './Components/Hero/Hero';
 import Background from './Components/Background/Background';
 import Navbar from './Components/Navbar/Navbar';
+import Section from './Components/Section/Section'
+import { Interior } from './Components/Interior/Interior';
 
 const App = () => {
   let heroData = [
@@ -29,6 +31,8 @@ const App = () => {
        setHeroCount={setHeroCount}
        playStatus={playStatus}
       />
+      <Section />
+      <Interior/>
     </div>
   )
 }
