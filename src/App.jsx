@@ -3,6 +3,7 @@ import Hero from './Components/Hero/Hero';
 import Background from './Components/Background/Background';
 import Navbar from './Components/Navbar/Navbar';
 import Section from './Components/Section/Section'
+import { Invotian } from './Components/Invotian/Invotian';
 import { Interior } from './Components/Interior/Interior';
 
 const App = () => {
@@ -33,6 +34,10 @@ const App = () => {
       />
       <Section />
       <Interior/>
+      <Invotian
+      playStatus={playStatus}
+      setPlayStatus={setPlayStatus}
+      />
     </div>
   )
 }
