@@ -65,6 +65,7 @@ export const Invotian = ({ setPlayStatus, playStatus }) => {
         <div
           key={index}
           className="invotian-slide"
+           style={{ backgroundImage: `url(${car.image})` }}
         >
           <div className="invotian-text">
             <p>{car.text}</p>
