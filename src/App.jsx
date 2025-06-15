@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Section from './Components/Section/Section'
 import { Invotian } from './Components/Invotian/Invotian';
 import { Interior } from './Components/Interior/Interior';
+import Catalog from './Components/Catalog/Catalog';
 
 const App = () => {
   let heroData = [
@@ -38,6 +39,7 @@ const App = () => {
       playStatus={playStatus}
       setPlayStatus={setPlayStatus}
       />
+      <Catalog />
     </div>
   )
 }
