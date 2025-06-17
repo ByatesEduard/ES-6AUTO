@@ -49,7 +49,7 @@ export default function MaseratiHero() {
     <section className="hero-section" style={{ backgroundImage: `url(${current.heroBg})` }}>
       <div className="hero-overlay" />
       <div className="hero-content">
-        <p className="hero-subtitle">Gamma Maserati</p>
+        <p className="hero-subtitle">Gamma Nio</p>
         <h1 className="hero-title">An extraordinary <br /> model range</h1>
         <nav className="hero-nav">
           {models.map((m, i) => (
@@ -74,6 +74,7 @@ export default function MaseratiHero() {
     transition={{ duration: 0.6 }}
     className="car-image"
   />
+
 </AnimatePresence>
           <button onClick={next} className="next-btn" aria-label="Next model">
             ▶

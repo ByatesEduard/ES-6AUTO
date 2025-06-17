@@ -1,0 +1,60 @@
+.loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.loading-icon {
+  width: 1000px;
+  height: 500px;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3; /* Світлий колір */
+  border-top: 6px solid #3498db; /* Синій */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@media (max-width: 600px) {
+  .loading-icon {
+    width: 200px;
+    height: 70px;
+  }
+  .spinner {
+    width: 35px;
+    height: 35px;
+    border-width: 4px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .loading-icon {
+    width: 150px;
+    height: 150px;
+  }
+  .spinner {
+    width: 70px;
+    height: 70px;
+    border-width: 6px;
+  }
+}

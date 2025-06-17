@@ -6,6 +6,7 @@ import Section from './Components/Section/Section'
 import { Invotian } from './Components/Invotian/Invotian';
 import { Interior } from './Components/Interior/Interior';
 import Catalog from './Components/Catalog/Catalog';
+import Loading from './Components/Loading/Loading';
 
 const App = () => {
   let heroData = [
@@ -15,33 +16,49 @@ const App = () => {
   ]
   const [heroCount, setHeroCount] = useState(0);
   const [playStatus, setPlayStatus] = useState(false);
-  
+
+
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    setInterval(() => {
-     setHeroCount((count) => {return count === 2?0:count+1})
-    }, 3000)
-  }, [])
+    const interval = setInterval(() => {
+      setHeroCount(count => count === 2 ? 0 : count + 1);
+    }, 3000);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    }
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>
-      <Background playStatus = {playStatus} heroCount={heroCount}/>
+      <Background playStatus={playStatus} heroCount={heroCount}/>
       <Navbar/>
       <Hero 
-       setPlayStatus={setPlayStatus}
-       heroData={heroData[heroCount]}
-       heroCount={heroCount}
-       setHeroCount={setHeroCount}
-       playStatus={playStatus}
+        setPlayStatus={setPlayStatus}
+        heroData={heroData[heroCount]}
+        heroCount={heroCount}
+        setHeroCount={setHeroCount}
+        playStatus={playStatus}
       />
       <Section />
-      <Interior/>
-      <Invotian
-      playStatus={playStatus}
-      setPlayStatus={setPlayStatus}
-      />
       <Catalog />
+      {/* <Interior/> */}
+      <Invotian
+        playStatus={playStatus}
+        setPlayStatus={setPlayStatus}
+      />
     </div>
   )
 }
 
-export default App
+export default App;
