@@ -49,8 +49,8 @@
 
 @media (min-width: 1200px) {
   .loading-icon {
-    width: 150px;
-    height: 150px;
+    width: 1000px;
+    height: 500px;
   }
   .spinner {
     width: 70px;
