@@ -7,6 +7,9 @@ import Navbar from './Components/Navbar/Navbar';
 import Section from './Components/Section/Section';
 import Catalog from './Components/Catalog/Catalog';
 import Loading from './Components/Loading/Loading';
+import Models from './Components/Models/Models';
+
+import  {models} from './Components/Catalog/Catalog'
 
 const App = () => {
   const heroData = [
@@ -59,6 +62,7 @@ const App = () => {
         />
 
         <Route path="/catalog" element={<Catalog />} />
+        <Route path='/models' element={<Models models={models} />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

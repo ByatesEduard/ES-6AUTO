@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 import "./Catalog.css";
 import img1 from "../../assets/img1.png";
 import img2 from "../../assets/img2.webp";
@@ -13,30 +12,38 @@ import imgbg2 from "../../assets/imgbg2.jpg";
 import imgbg3 from "../../assets/imgbg3.webp";
 import imgbg4 from "../../assets/imgbg4.jpg";
 
-const models = [
+export const models = [
   {
     name: "ES-6",
     slug: "grancabrio",
     heroBg: imgbg1,
     carImg: img1,
+    maxSpeed: "250 km/h",
+    horsepower: 400,
   },
   {
     name: "ES-SPORT-SE",
     slug: "granturismo",
     heroBg: imgbg2,
     carImg: img2,
+    maxSpeed: "250 km/h",
+    horsepower: 400,
   },
   {
     name: "ES-Q",
     slug: "grecale",
     heroBg: imgbg3,
     carImg: img3,
+    maxSpeed: "250 km/h",
+    horsepower: 400,
   },
   {
     name: "ES-1 AUTO",
     slug: "mc20",
     heroBg: imgbg4,
     carImg: img4,
+    maxSpeed: "250 km/h",
+    horsepower: 400,
   },
 ];
 
