@@ -4,10 +4,10 @@ import image1 from '../../assets/image1.png'
 import image2 from '../../assets/image2.png'
 import image3 from '../../assets/image3.png'
 
-const Background = ({playStatus, heroCount}) => {
+const Background = ({playStatus, heroCount,}) => {
     if(playStatus){
         return (
-            <video className='background fade-in' autoPlay loop muted>
+            <video className='background fade-in' autoPlay loop playsInline muted  preload="auto"> 
                 <source src={video1} type='video/mp4' />
             </video>
         )
