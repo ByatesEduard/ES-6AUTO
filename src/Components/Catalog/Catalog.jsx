@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from 'framer-motion';
-import "./Catalog.css";
-import img1 from '../../assets/img1.png';
-import img2 from '../../assets/img2.webp'
-import img3 from '../../assets/img3.png'
-import img4 from '../../assets/img4.webp'
+import { motion, AnimatePresence } from "framer-motion";
 
-import imgbg1 from '../../assets/imgbg1.png'
-import imgbg2 from '../../assets/imgbg2.jpg'
-import imgbg3 from '../../assets/imgbg3.webp'
-import imgbg4 from '../../assets/imgbg4.jpg'
+
+import "./Catalog.css";
+import img1 from "../../assets/img1.png";
+import img2 from "../../assets/img2.webp";
+import img3 from "../../assets/img3.png";
+import img4 from "../../assets/img4.webp";
+
+import imgbg1 from "../../assets/imgbg1.png";
+import imgbg2 from "../../assets/imgbg2.jpg";
+import imgbg3 from "../../assets/imgbg3.webp";
+import imgbg4 from "../../assets/imgbg4.jpg";
 
 const models = [
   {
@@ -34,23 +36,26 @@ const models = [
     name: "ES-1 AUTO",
     slug: "mc20",
     heroBg: imgbg4,
-    carImg:img4,
+    carImg: img4,
   },
 ];
 
 export default function MaseratiHero() {
   const [index, setIndex] = useState(0);
   const current = models[index];
-
-  const next = () => setIndex((i) => (i + 1) % models.length);
   const selectModel = (i) => setIndex(i);
 
   return (
-    <section className="hero-section" style={{ backgroundImage: `url(${current.heroBg})` }}>
+    <section
+      className="hero-section"
+      style={{ backgroundImage: `url(${current.heroBg})` }}
+    >
       <div className="hero-overlay" />
       <div className="hero-content">
         <p className="hero-subtitle">Gamma Nio</p>
-        <h1 className="hero-title">An extraordinary <br /> model range</h1>
+        <h1 className="hero-title">
+          An extraordinary <br /> model range
+        </h1>
         <nav className="hero-nav">
           {models.map((m, i) => (
             <button
@@ -64,21 +69,22 @@ export default function MaseratiHero() {
         </nav>
         <div className="car-image-wrapper">
           <AnimatePresence mode="wait">
-  <motion.img
-    key={current.carImg}
-    src={current.carImg}
-    alt={current.name}
-    initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -50 }}
-    transition={{ duration: 0.6 }}
-    className="car-image"
-  />
-
-</AnimatePresence>
-          <button onClick={next} className="next-btn" aria-label="Next model">
-            ▶
-          </button>
+            <motion.img
+              key={current.carImg}
+              src={current.carImg}
+              alt={current.name}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.6 }}
+              className="car-image"
+            />
+            <motion.div
+              drag="x"
+              dragDirectionLock
+              onDirectionLock={(axis) => console.log(`Locked to ${axis} axis`)}
+            />
+          </AnimatePresence>
         </div>
       </div>
     </section>
